@@ -2,6 +2,25 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  
+  <div class='field'>
+    <%= f.text_field :name, placeholder: 'Enter your name here' %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :username%><br>
+    <%= f.text_field :username%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :bio%><br>
+    <%= f.text_field :bio%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :location%><br>
+    <%= f.text_field :location%>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -15,6 +34,7 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
+
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
