@@ -22,20 +22,20 @@
 en:
   hello: "Hello world"
   activerecord:
-  	attributes:
-  		tweet:
-  			message: "A tweet"
-  		user:
-  			username: "A username"
-  	errors:
-  		models:
-  			tweet:
-  				attributes:
-  					message:
-  						blank: " is missing. Got a frog in your throat?"
-  						too_long: " is only 140 characters max, you dummy!"
-  			user:
-  				attributes:
-  					username:
-  						taken: " must be unique. Because you are unique. Just like everyone else."
-  						
+    attributes:
+      tweet:
+        message: "A tweet"
+      user:
+        username: "Your username"
+    errors:
+      models:
+        tweet:
+          attributes:
+            message:
+              blank: " is missing. Got a frog in your throat?"
+              too_long: " is only 140 characters max, you dummy!"
+        user:
+          attributes:
+            username:
+              blank: " is missing. Don't you want people to know you are?"
+              taken: " must be unique. Because you are unique. Just like everyone else."
