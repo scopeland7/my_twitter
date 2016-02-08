@@ -1,8 +1,8 @@
 <h1>@<%= @user.username %>'s Profile &amp; Tweets</h1>
 
-<p><%= @user.name %></p>
-<p><%= @user.location %></p>
-<p><%= @user.bio %></p>
+<p>Name: <%= @user.name %></p>
+<p>Location: <%= @user.location %></p>
+<p>Bio: <%= @user.bio %></p>
 
 <p>
 
@@ -14,13 +14,17 @@
 
 </p>
 
+<div class='row'>
+	<% @user.tweets.each do |f| %>
+	  <div class='col-md-12'>
+	  	<div class='well'>
+	  		<p><%= f.message %></p>
+	  		<p><%= f.created_at %></p>
+	  		<p><strong><em><%= f.user.username %></em></strong></p>
+	  	</div>
+	  </div>
+	<% end %>
+</div>
 
-<% @user.tweets.each do |tweet| %>
-	<div>
-	  <p><%= tweet.message %></p>
 
-	</div>
 
-<ul>
-
-</ul>

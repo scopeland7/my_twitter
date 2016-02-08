@@ -7,8 +7,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= @tweet.user.username %>
+  <%= link_to @tweet.user.username, user_profile_path(id: @tweet.user.id) %>
 </p>
+<%= render 'comments'
+
 
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |

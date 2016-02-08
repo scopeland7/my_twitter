@@ -1,12 +1,25 @@
-<h1>Your Twitter Feed</h1>
-<p>Hello, <%= current_user.username %>!</p>
-<p>Here's what your friends are saying: </p>
+<div class='row'>
+	<div class='col-md-12'>	
+		<div class='pull-right'>
+			<%= link_to 'Tweet', tweets_new_path, class: 'btn btn-primary' %>
+		</div>
+		<h1>Your Twitter Feed</h1>
+	</div>
+</div>
+
+<h4>Hello, <%= current_user.username %>!</h4>
+<h4>Here's what your friends are saying: </h4>
 
 <div>
-	<% @following_tweets.each do |f| %>
-	  <div>
-	  	<p><%= f.message %></p>
-	  	<p><strong><em><%= f.user.username %></em></strong></p>
+	<% @following_tweets.each do |tweet| %>
+	  <div class='row'>
+		  <div class='col-md-8'>
+		  	<div class='well'>
+		  		<p><%= tweet.message %></p>
+		  		<p><%= tweet.created_at %></p>
+		  		<p><strong><em><%= link_to tweet.user.username, show_user_path(id: tweet.user.id) %></em></strong></p>
+		  	</div>
+		  </div>
 	  </div>
 	<% end %>
 </div>
