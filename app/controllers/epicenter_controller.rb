@@ -14,7 +14,14 @@ class EpicenterController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+  def followers
+    @user = User.find(params[:id])
+    @users = []
+
+  end
+
   def now_following
+    @user = User.find(params[:id])
   	current_user.following.push(params[:id].to_i)
   	current_user.save
 
